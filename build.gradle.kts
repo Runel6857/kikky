@@ -53,8 +53,8 @@ dependencies {
 	"sodium06CompileOnly"("maven.modrinth:sodium:$sodium06Version")
 	// compileOnly("maven.modrinth:starlight:$starlightVersion")
 	compileOnly("ca.stellardrift:confabricate:$confabricateVersion")
-	// implementation("me.shedaniel.cloth:cloth-config-fabric:$clothConfigVersion")
-	// implementation("com.terraformersmc:modmenu:$modMenuVersion")
+    implementation("me.shedaniel.cloth:cloth-config-fabric:15.0.127")
+	implementation("com.terraformersmc:modmenu:11.0.2")
 }
 
 tasks.processResources {

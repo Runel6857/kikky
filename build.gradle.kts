@@ -70,9 +70,9 @@ tasks.processResources {
 }
 
 tasks.withType<JavaCompile> {
-	options.encoding = "UTF-8"
-	sourceCompatibility = "25"
-	targetCompatibility = "25"
+    options.encoding = "UTF-8"
+    sourceCompatibility = "21"
+    targetCompatibility = "21"
 }
 
 tasks.withType<AbstractArchiveTask> {

@@ -22,9 +22,6 @@
     "client": [
       "de.johni0702.minecraft.bobby.Bobby"
     ],
-    "modmenu": [
-      "de.johni0702.minecraft.bobby.BobbyModMenuApiImpl"
-    ],
     "sodium:config_api_user": [
       "de.johni0702.minecraft.bobby.SodiumConfigEntrypoint"
     ]
@@ -36,11 +33,10 @@
 
   "depends": {
     "fabricloader": ">=0.16.9",
-    "minecraft": "~1.21.9"
+    "minecraft": "*"
   },
   "suggests": {
-    "cloth-config2": "^${clothConfigVersion}",
-    "modmenu": "^${modMenuVersion}"
+    "cloth-config2": "^${clothConfigVersion}"
   },
   "breaks": {
     "sodium": "<0.6.0"

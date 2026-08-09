@@ -46,31 +46,31 @@ public class BobbyConfig {
     }
 
     public boolean isNoBlockEntities() {
-        return noBlockEntities;
+        return true;
     }
 
     public boolean isEnabled() {
-        return enabled;
+        return true;
     }
 
     public boolean isDynamicMultiWorld() {
-        return dynamicMultiWorld;
+        return true;
     }
 
     public boolean isTaintFakeChunks() {
-        return taintFakeChunks;
+        return false;
     }
 
     public int getUnloadDelaySecs() {
-        return unloadDelaySecs;
+        return 60;
     }
 
     public int getDeleteUnusedRegionsAfterDays() {
-        return deleteUnusedRegionsAfterDays;
+        return -1;
     }
 
     public int getMaxRenderDistance() {
-        return maxRenderDistance;
+        return 64;
     }
 
     public int getViewDistanceOverwrite() {

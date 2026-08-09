@@ -55,7 +55,7 @@ public class Bobby implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         try {
-            Path configPath = FabricLoader.getInstance().getConfigDir().resolve(MOD_ID + ".conf");
+            Path configPath = FabricLoader.getInstance().getConfigDir().resolve("coconutsmp_bobby.conf");
             @SuppressWarnings("resource") // we'll keep this around for the entire lifetime of our mod
             ConfigurationReference<CommentedConfigurationNode> rootRef = getOrCreateWatchServiceListener()
                     .listenToConfiguration(path -> HoconConfigurationLoader.builder().path(path).build(), configPath);
@@ -90,16 +90,13 @@ public class Bobby implements ClientModInitializer {
     }
 
     public boolean isEnabled() {
-        BobbyConfig config = getConfig();
-        return config.isEnabled()
-                // For singleplayer, disable ourselves unless the view-distance overwrite is active.
-                && (client.getServer() == null || config.getViewDistanceOverwrite() != 0);
+        if (client.getSingleplayerServer() != null) {
+            return false;
+        }
+        return true;
     }
 
     public Screen createConfigScreen(Screen parent) {
-        if (FabricLoader.getInstance().isModLoaded("cloth-config2")) {
-            return BobbyConfigScreenFactory.createConfigScreen(parent, getConfig(), configReference::setAndSaveAsync);
-        }
         return null;
     }
 
